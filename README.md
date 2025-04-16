@@ -1,3 +1,5 @@
+*[Доступно к прочтению на русском языке](https://github.com/AlexeiCrystal/youtube-contain-ads-remover/blob/main/README-ru.md)*
+
 # What is this?
 There are ad blockers on YouTube. They block ads, but not all of them block the plug that says that the video may contain ads (there is monetisation). This script solves this problem.
 
