@@ -1,0 +1,35 @@
+name: Add or Update translation
+description: To add or update translation for description of this script
+labels: [""]
+body:
+  - type: textarea
+    id: language-translation
+    attributes:
+      label: Language
+      description: "Language into which the translation is made"  # Added opening quote
+    validations:
+      required: true
+      
+  - type: textarea
+    id: readme-translation
+    attributes:
+      label: README.md
+      description: "Translation for README.md"  # Added opening quote
+    validations:
+      required: true
+
+  - type: textarea
+    id: name-translation
+    attributes:
+      label: Script name translation
+      description: "Translation for name of the script"  # Added opening quote
+    validations:
+      required: true
+
+   - type: textarea
+    id: description-translation
+    attributes:
+      label: Script short description translation
+      description: "Translation for name of the script"  # Added opening quote
+    validations:
+      required: true
