@@ -9,3 +9,14 @@ body:
       description: "Enter your question about this script"
     validations:
       required: true
+
+  - type: checkboxes
+    id: verification
+    attributes:
+      label: Pre-submission checks
+      description: "Confirm these requirements"  # Fixed typo (requirement -> requirements)
+      options:
+        - label: I'm using the latest official script version
+          required: true
+        - label: Question about this script and not duplicate
+          required: true
