@@ -14,8 +14,8 @@
 // @grant        none
 // @run-at       document-end
 // @icon         https://github.com/AlexeiCrystal/youtube-contain-ads-remover/raw/main/icon.png
-// @downloadURL  https://github.com/AlexeiCrystal/youtube-contain-ads-remover/raw/main/script.js
-// @updateURL    https://github.com/AlexeiCrystal/youtube-contain-ads-remover/raw/main/script.js
+// @downloadURL  https://github.com/AlexeiCrystal/youtube-contain-ads-remover/raw/main/script.user.js
+// @updateURL    https://github.com/AlexeiCrystal/youtube-contain-ads-remover/raw/main/script.user.js
 // ==/UserScript==
 
 (function() {
