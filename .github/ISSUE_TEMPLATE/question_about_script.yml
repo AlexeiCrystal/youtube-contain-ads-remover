@@ -6,7 +6,8 @@ body:
     id: question
     attributes:
       label: Question
-      description: "Enter your question about this script"
+      placeholder: "Enter your question"
+      description: "Your question about this script"
     validations:
       required: true
 
