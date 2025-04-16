@@ -1,5 +1,5 @@
-name: Add or Update translation
-description: To add or update translation for description of this script
+name: Question about script
+description: To ask a question about this script
 labels: ["question"]
 body:
   - type: textarea
