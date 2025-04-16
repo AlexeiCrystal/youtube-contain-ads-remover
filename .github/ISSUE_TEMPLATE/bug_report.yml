@@ -45,6 +45,8 @@ body:
       label: Script provider
       description: "The name and version of what gives you the ability to use scripts in your browser"
       placeholder: "Example: Tampermonkey 3.3.1 or Example: Built-in browser function"
+     validations:
+      required: true
 
   - type: textarea
     id: additional-context
