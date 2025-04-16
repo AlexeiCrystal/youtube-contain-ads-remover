@@ -17,7 +17,11 @@ body:
       label: Pre-submission checks
       description: "Confirm these requirements"  # Fixed typo (requirement -> requirements)
       options:
-        - label: I'm using the latest official script version
+        - label: Question about latest version of script
+          required: false
+        - label: Question about official script version
           required: true
-        - label: Question about this script and not duplicate
+        - label: Question is not duplicate
+          required: true
+        - label: Question about this script
           required: true
