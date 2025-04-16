@@ -1,0 +1,62 @@
+name: Bug report
+description: To report a bug or issue with the script.
+labels: ["bug"]
+body:
+  - type: textarea
+    id: reproduction-steps
+    attributes:
+      label: Steps to reproduce
+      description: Describe the exact steps to reproduce the issue.
+      value: |
+        1. 
+        2. 
+        3. 
+    validations:
+      required: false
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected behavior
+      description: What should have happened under normal circumstances?"
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual-behavior
+    attributes:
+      label: Actual behavior
+      description: What actually happened due to the bug?"
+    validations:
+      required: true
+
+  - type: input
+    id: browser-info
+    attributes:
+      label: Your browser information
+      placeholder: "Example: Via 6.3.1"
+      description: "Your browser name and version"
+    validations:
+      required: true
+
+  - type: textarea
+    id: script-provider
+    attributes:
+      label: Script provider
+      description: "The name and version of what gives you the ability to use scripts in your browser"
+      placeholder: "Example: Tampermonkey 3.3.1 or Example: Built-in browser function"
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional context
+      description: Screenshots, videos, or other relevant materials
+
+  - type: checkboxes
+    id: verification
+    attributes:
+      label: Pre-submission checks
+      description: Confirm these requirement
+      options:
+        - label: I'm using the latest official script version
+          required: true
