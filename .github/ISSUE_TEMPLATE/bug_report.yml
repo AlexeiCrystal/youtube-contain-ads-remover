@@ -18,7 +18,7 @@ body:
     id: expected-behavior
     attributes:
       label: Expected behavior
-      description: What should have happened under normal circumstances?"
+      description: "What should have happened under normal circumstances?"  # Added opening quote
     validations:
       required: true
 
@@ -26,7 +26,7 @@ body:
     id: actual-behavior
     attributes:
       label: Actual behavior
-      description: What actually happened due to the bug?"
+      description: "What actually happened due to the bug?"  # Added opening quote
     validations:
       required: true
 
@@ -40,12 +40,12 @@ body:
       required: true
 
   - type: textarea
-    id: script-provider
+    id: script-provider  # Typo in ID? Should it be 'script-provider'?
     attributes:
       label: Script provider
       description: "The name and version of what gives you the ability to use scripts in your browser"
       placeholder: "Example: Tampermonkey 3.3.1 or Example: Built-in browser function"
-     validations:
+    validations:  # Fixed indentation (was 1 space short)
       required: true
 
   - type: textarea
@@ -58,7 +58,7 @@ body:
     id: verification
     attributes:
       label: Pre-submission checks
-      description: Confirm these requirement
+      description: "Confirm these requirements"  # Fixed typo (requirement -> requirements)
       options:
         - label: I'm using the latest official script version
           required: true
