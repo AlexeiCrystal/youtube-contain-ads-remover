@@ -21,7 +21,7 @@ body:
   - type: textarea
     id: name-translation
     attributes:
-      label: Script name translation
+      label: Script name
       description: "Translation for name of the script"
     validations:
       required: true
@@ -29,7 +29,7 @@ body:
   - type: textarea
     id: description-translation
     attributes:
-      label: Script short description translation
+      label: Script short description
       description: "Translation for the script's short description"
     validations:
       required: true
