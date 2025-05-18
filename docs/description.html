@@ -6,14 +6,14 @@
     <title>YouTube "Contain Ads" Remover</title>
     <style>
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
             line-height: 1.6;
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
             color: #24292e;
         }
-        h1, h2, h3 {
+        h1, h2 {
             color: #0366d6;
             margin-top: 24px;
             margin-bottom: 16px;
@@ -27,91 +27,153 @@
         }
         .download-btn {
             display: inline-block;
-            padding: 6px 12px;
+            padding: 8px 16px;
             background-color: #2ea44f;
             color: white;
             border-radius: 6px;
             font-weight: bold;
             margin: 10px 0;
+            transition: background-color 0.2s;
         }
         .download-btn:hover {
             background-color: #2c974b;
-            text-decoration: none;
         }
-        .lang-switcher {
-            margin-bottom: 20px;
+        .contribute-buttons {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+            flex-wrap: wrap;
         }
-        .lang-btn {
-            padding: 5px 10px;
+        .contribute-btn {
+            padding: 8px 12px;
             background: #f6f8fa;
             border: 1px solid #d1d5da;
-            border-radius: 3px;
-            cursor: pointer;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.2s;
         }
-        .lang-btn.active {
-            background: #0366d6;
-            color: white;
+        .contribute-btn:hover {
+            background: #e1e4e8;
         }
-        .lang-section {
-            display: none;
+        .author-section {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e1e4e8;
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
-        .lang-section.active {
-            display: block;
+        .author-avatar {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .author-info {
+            display: flex;
+            flex-direction: column;
+        }
+        .author-name {
+            font-size: 18px;
+            font-weight: 600;
+        }
+        .author-label {
+            font-size: 14px;
+            color: #57606a;
+        }
+        @media (max-width: 600px) {
+            .contribute-buttons {
+                flex-direction: column;
+            }
+            .contribute-btn {
+                width: 100%;
+                justify-content: center;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="lang-switcher">
-        <button class="lang-btn active" onclick="switchLang('en')">English</button>
-        <button class="lang-btn" onclick="switchLang('ru')">Русский</button>
-    </div>
-
-    <div id="en" class="lang-section active">
-        <h1>What is this?</h1>
-        <p>There are ad blockers on YouTube. They block ads, but not all of them block the plug that says that the video may contain ads (there is monetisation). This script solves this problem.</p>
-
-        <h2>Download link</h2>
-        <a class="download-btn" href="https://github.com/AlexeiCrystal/youtube-contain-ads-remover/raw/main/script.user.js" download>Download</a>
-        
-        <p>🔄 In browsers that support automatic script installation or browsers with the Tampermonkey or Violentmonkey extension, script installed automatically</p>
-        <p>🖐🏻 In browsers without automatic script installation support and without Tampermonkey or Violentmonkey extensions, you need to download and manually apply the script</p>
-
-        <h2>Contributing</h2>
-        <p><a href="https://github.com/AlexeiCrystal/youtube-contain-ads-remover/issues">🪲 Issues</a></p>
-        <p><a href="https://github.com/AlexeiCrystal/youtube-contain-ads-remover/pulls">🛠️ Pull requests</a></p>
-    </div>
-
-    <div id="ru" class="lang-section">
-        <h1>Что это?</h1>
-        <p>Есть блокировщики рекламы на YouTube. Они блокируют рекламу, но не все из них блокируют плажку говорящюю о том что в видео может содержаться реклама (есть монетизация). Этот скрипт решает эту проблему.</p>
-
-        <h2>Ссылка на скачивание</h2>
-        <a class="download-btn" href="https://github.com/AlexeiCrystal/youtube-contain-ads-remover/raw/main/script.user.js" download>Скачать</a>
-        
-        <p>🔄 В браузерах с поддержкой автоматической установки скриптов или браузеров с установленным расширением Tampermonkey или Violetmonkey установка пройдёт автоматически</p>
-        <p>🖐🏻 В браузерах без поддержки автоматической установки и без расширений Tampermonkey или Violentmonkey нужно скачать и вручную применить скрипт</p>
-
-        <h2>Помощь в проекте</h2>
-        <p><a href="https://github.com/AlexeiCrystal/youtube-contain-ads-remover/issues">🪲 Сообщения о проблемах</a></p>
-        <p><a href="https://github.com/AlexeiCrystal/youtube-contain-ads-remover/pulls">🛠️ Запросы на вытягивание</a></p>
-    </div>
-
+    <div id="content"></div>
+    <div id="author-section"></div>
     <script>
-        function switchLang(lang) {
-            // Hide all language sections
-            document.querySelectorAll('.lang-section').forEach(section => {
-                section.classList.remove('active');
-            });
+        const content = {
+            en: {
+                title: "What is this?",
+                description: "There are ad blockers on YouTube. They block ads, but not all of them block the plug that says that the video may contain ads (there is monetisation). This script solves this problem.",
+                download: "Download",
+                autoInstall: "🔄 In browsers that support automatic script installation or browsers with the Tampermonkey or Violentmonkey extension, script installed automatically",
+                manualInstall: "🖐🏻 In browsers without automatic script installation support and without Tampermonkey or Violentmonkey extensions, you need to download and manually apply the script",
+                contributing: "Contributing",
+                sourceCode: "Source Code",
+                reportIssues: "Report Issues",
+                pullRequests: "Pull Requests",
+                authorLabel: "Author"
+            },
+            ru: {
+                title: "Что это?",
+                description: "Есть блокировщики рекламы на YouTube. Они блокируют рекламу, но не все из них блокируют плашку, говорящую о том, что в видео может содержаться реклама (есть монетизация). Этот скрипт решает эту проблему.",
+                download: "Скачать",
+                autoInstall: "🔄 В браузерах с поддержкой автоматической установки скриптов или браузерах с установленным расширением Tampermonkey или Violentmonkey установка пройдёт автоматически",
+                manualInstall: "🖐🏻 В браузерах без поддержки автоматической установки и без расширений Tampermonkey или Violentmonkey нужно скачать и вручную применить скрипт",
+                contributing: "Помощь в проекте",
+                sourceCode: "Исходный код",
+                reportIssues: "Сообщения о проблемах",
+                pullRequests: "Запросы на вытягивание",
+                authorLabel: "Автор"
+            }
+        };
+
+        // Определяем язык пользователя
+        const userLang = navigator.language.startsWith('ru') ? 'ru' : 'en';
+
+        // Основной контент
+        document.getElementById('content').innerHTML = `
+            <h1>${content[userLang].title}</h1>
+            <p>${content[userLang].description}</p>
+
+            <h2>${userLang === 'en' ? 'Download link' : 'Ссылка на скачивание'}</h2>
+            <a class="download-btn" href="https://github.com/AlexeiCrystal/youtube-contain-ads-remover/raw/main/script.user.js" download>
+                ${content[userLang].download}
+            </a>
             
-            // Show selected language
-            document.getElementById(lang).classList.add('active');
-            
-            // Update button states
-            document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            event.target.classList.add('active');
-        }
+            <p>${content[userLang].autoInstall}</p>
+            <p>${content[userLang].manualInstall}</p>
+
+            <h2>${content[userLang].contributing}</h2>
+            <div class="contribute-buttons">
+                <a href="https://github.com/AlexeiCrystal/youtube-contain-ads-remover" class="contribute-btn">
+                    <svg height="16" viewBox="0 0 16 16" width="16" fill="currentColor">
+                        <path fill-rule="evenodd" d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"></path>
+                    </svg>
+                    ${content[userLang].sourceCode}
+                </a>
+                <a href="https://github.com/AlexeiCrystal/youtube-contain-ads-remover/issues" class="contribute-btn">
+                    <svg height="16" viewBox="0 0 16 16" width="16" fill="currentColor">
+                        <path d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm9 3a1 1 0 11-2 0 1 1 0 012 0zm-.25-6.25a.75.75 0 00-1.5 0v3.5a.75.75 0 001.5 0v-3.5z"></path>
+                    </svg>
+                    ${content[userLang].reportIssues}
+                </a>
+                <a href="https://github.com/AlexeiCrystal/youtube-contain-ads-remover/pulls" class="contribute-btn">
+                    <svg height="16" viewBox="0 0 16 16" width="16" fill="currentColor">
+                        <path fill-rule="evenodd" d="M7.177 3.073L9.573.677A.25.25 0 0110 .854v4.792a.25.25 0 01-.427.177L7.177 3.427a.25.25 0 010-.354zM3.75 2.5a.75.75 0 100 1.5.75.75 0 000-1.5zm-2.25.75a2.25 2.25 0 113 2.122v5.256a2.251 2.251 0 11-1.5 0V5.372A2.25 2.25 0 011.5 3.25zM11 2.5h-1V4h1a1 1 0 011 1v5.628a2.251 2.251 0 101.5 0V5A2.5 2.5 0 0011 2.5zm1 10.25a.75.75 0 111.5 0 .75.75 0 01-1.5 0zM3.75 12a.75.75 0 100 1.5.75.75 0 000-1.5z"></path>
+                    </svg>
+                    ${content[userLang].pullRequests}
+                </a>
+            </div>
+        `;
+
+        // Авторский блок с локализацией
+        document.getElementById('author-section').innerHTML = `
+            <div class="author-section">
+                <img src="https://avatars.githubusercontent.com/u/182358419?v=4" alt="Author" class="author-avatar">
+                <div class="author-info">
+                    <a href="https://github.com/AlexeiCrystal" class="author-name">AlexeiCrystal</a>
+                    <span class="author-label">${content[userLang].authorLabel}</span>
+                </div>
+            </div>
+        `;
     </script>
 </body>
 </html>
