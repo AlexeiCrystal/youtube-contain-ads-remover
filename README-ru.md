@@ -1,4 +1,8 @@
-**[English](/README.md) | Русский**
+# Website
+**[alexeicrystal.github.io/youtube-contain-ads-remover](https://alexeicrystal.github.io/youtube-contain-ads-remover)**
+
+# Author
+**[Created by AlexeiCrystal](https://github.com/AlexeiCrystal)****[English](/README.md) | Русский**
 
 # Что это?
 Есть блокировщики рекламы на YouTube. Они блокируют рекламу, но не все из них блокируют плажку говорящюю о том что в видео может содержаться реклама (есть монетизация). Этот скрипт решает эту проблему.
@@ -12,6 +16,12 @@
 🖐🏻В браузерах без поддержки автоматической установки и без расширений Tampermonkey или Violentmonkey нужно скачать и вручную применить скрипт
 
 # Помощь в проекте
-[🪲Сообщения о проблемах](https://github.com/AlexeiCrystal/youtube-contain-ads-remover/issues)
+**[🪲Сообщения о проблемах](https://github.com/AlexeiCrystal/youtube-contain-ads-remover/issues)**
 
-[🛠️Запросы на вытягивание](https://github.com/AlexeiCrystal/youtube-contain-ads-remover/pulls)
+**[🛠️Запросы на вытягивание](https://github.com/AlexeiCrystal/youtube-contain-ads-remover/pulls)**
+
+# Вебсайт
+**[alexeicrystal.github.io/youtube-contain-ads-remover](https://alexeicrystal.github.io/youtube-contain-ads-remover)**
+
+# Автор
+**[Создано AlexeiCrystal](https://github.com/AlexeiCrystal)**
