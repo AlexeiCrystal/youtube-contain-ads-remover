@@ -17,7 +17,7 @@ There are ad blockers on YouTube. They block ads, but not all of them block the 
 **[🛠️Pull requests](https://github.com/AlexeiCrystal/youtube-contain-ads-remover/pulls)**
 
 # Website
-**alexeicrystal.github.io/youtube-contain-ads-remover**
+alexeicrystal.github.io/youtube-contain-ads-remover
 
 # Author
 **[Created by AlexeiCrystal](github.com/AlexeiCrystal)**
