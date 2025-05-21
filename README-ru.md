@@ -1,4 +1,4 @@
-*[Available to read in English](https://github.com/AlexeiCrystal/youtube-contain-ads-remover/blob/main/README.md)*
+[English](/README.md) | Русский**
 
 # Что это?
 Есть блокировщики рекламы на YouTube. Они блокируют рекламу, но не все из них блокируют плажку говорящюю о том что в видео может содержаться реклама (есть монетизация). Этот скрипт решает эту проблему.
