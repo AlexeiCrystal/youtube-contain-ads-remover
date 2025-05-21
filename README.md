@@ -12,6 +12,12 @@ There are ad blockers on YouTube. They block ads, but not all of them block the 
 🖐🏻In browsers without automatic script installation support and without Tampermonkey or Violentmonkey extensions, you need to download and manually apply the script
 
 # Contributing
-[🪲Issues](https://github.com/AlexeiCrystal/youtube-contain-ads-remover/issues)
+**[🪲Issues](https://github.com/AlexeiCrystal/youtube-contain-ads-remover/issues)**
 
-[🛠️Pull requests](https://github.com/AlexeiCrystal/youtube-contain-ads-remover/pulls)
+**[🛠️Pull requests](https://github.com/AlexeiCrystal/youtube-contain-ads-remover/pulls)**
+
+# Website
+**alexeicrystal.github.io/youtube-contain-ads-remover**
+
+# Author
+**[Created by AlexeiCrystal](github.com/AlexeiCrystal)**
