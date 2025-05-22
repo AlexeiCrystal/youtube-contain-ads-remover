@@ -2,8 +2,10 @@
 // @name           YouTube "Contain Ads" bars remover
 // @name:ru        Убрать плашку "Есть реклама" на YouTube
 // @namespace      http://tampermonkey.net/
-// @homepage       https://alexeicrystal.github.io/youtube-contain-ads-remover/
+// @homepage       https://alexeicrystal.github.io/youtube-contain-ads-remover
 // @license        MIT | https://github.com/AlexeiCrystal/youtube-contain-ads-remover/blob/main/LICENSE.md
+// @supportURL     https://github.com/AlexeiCrystal/youtube-contain-ads-remover/issues
+// @source         https://github.com/AlexeiCrystal/youtube-contain-ads-remover
 // @version        1.1
 // @description    Removes "Contain ads" bars in YouTube videos
 // @description:ru Удаляет плашки "Есть реклама" в видео на YouTube
