@@ -1,21 +1,23 @@
 // ==UserScript==
-// @name         YouTube "Contain Ads" bars remover
-// @name:ru      Убрать плашку "Есть реклама" на YouTube
-// @namespace    http://tampermonkey.net/
-// @version      1.0
-// @description  Removes "Contain ads" bars in YouTube videos
+// @name           YouTube "Contain Ads" bars remover
+// @name:ru        Убрать плашку "Есть реклама" на YouTube
+// @namespace      http://tampermonkey.net/
+// @homepage       https://alexeicrystal.github.io/youtube-contain-ads-remover/
+// @license        MIT | https://github.com/AlexeiCrystal/youtube-contain-ads-remover/blob/main/LICENSE.md
+// @version        1.1
+// @description    Removes "Contain ads" bars in YouTube videos
 // @description:ru Удаляет плашки "Есть реклама" в видео на YouTube
-// @author       AlexeiCrystal
-// @match        *://*.youtube.com/*
-// @match        *://*.youtu.be/*
-// @match        *://youtube.com/*
-// @match        *://yt.be/*
-// @match        *://music.youtube.com/*
-// @grant        none
-// @run-at       document-end
-// @icon         https://github.com/AlexeiCrystal/youtube-contain-ads-remover/raw/main/icon.png
-// @downloadURL  https://github.com/AlexeiCrystal/youtube-contain-ads-remover/raw/main/script.user.js
-// @updateURL    https://github.com/AlexeiCrystal/youtube-contain-ads-remover/raw/main/script.user.js
+// @author         AlexeiCrystal
+// @match          *://*.youtube.com/*
+// @match          *://*.youtu.be/*
+// @match          *://youtube.com/*
+// @match          *://yt.be/*
+// @match          *://music.youtube.com/*
+// @grant          none
+// @run-at         document-end
+// @icon           https://github.com/AlexeiCrystal/youtube-contain-ads-remover/raw/main/icon.png
+// @downloadURL    https://github.com/AlexeiCrystal/youtube-contain-ads-remover/raw/main/script.user.js
+// @updateURL      https://github.com/AlexeiCrystal/youtube-contain-ads-remover/raw/main/script.user.js
 // ==/UserScript==
 
 (function() {
