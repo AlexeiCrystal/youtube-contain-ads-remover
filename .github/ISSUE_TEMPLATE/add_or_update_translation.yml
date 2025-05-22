@@ -19,6 +19,15 @@ body:
       description: "Translation for README.md"
     validations:
       required: true
+      
+  - type: textarea
+    id: security-translation
+    attributes:
+      label: SECURITY.md
+      placeholder: "Enter translation"
+      description: "Translation for SECURITY.md"
+    validations:
+      required: true
 
   - type: textarea
     id: name-translation
